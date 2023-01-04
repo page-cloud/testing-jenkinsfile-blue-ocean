@@ -2,8 +2,19 @@ pipeline {
   agent any
   stages {
     stage('Gitpull') {
-      steps {
-        sh 'echo "Pulling application"'
+      parallel {
+        stage('Gitpull') {
+          steps {
+            sh 'echo "Pulling application"'
+          }
+        }
+
+        stage('Unit Testing') {
+          steps {
+            sh 'echo "Unit Testing"'
+          }
+        }
+
       }
     }
 
