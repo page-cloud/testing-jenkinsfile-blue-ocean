@@ -18,5 +18,11 @@ pipeline {
       }
     }
 
+    stage('Bulid') {
+      steps {
+        sh 'echo "BUild Application"'
+      }
+    }
+
   }
 }
